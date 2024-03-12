@@ -1,28 +1,48 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <div class = 'game'>
-        <div class = 'row'>
-            <button id = 'c11'>1</button>
-            <button id = 'c12'>2</button>
-            <button id = 'c13'>3</button>
+    <div class="game">
+        <div class="row">
+            <button id="c11" onclick="cellClick(1, 1, 'c11')"></button>
+            <button id="c12" onclick="cellClick(1, 2, 'c12')"></button>
+            <button id="c13" onclick="cellClick(1, 3, 'c13')"></button>
         </div>
-        <div class = 'row'>
-            <button id = 'c21'>4</button>
-            <button id = 'c22'>5</button>
-            <button id = 'c23'>6</button>
+        <div class="row">
+            <button id="c21" onclick="cellClick(2, 1, 'c21')"></button>
+            <button id="c22" onclick="cellClick(2, 2, 'c22')"></button>
+            <button id="c23" onclick="cellClick(2, 3, 'c23')"></button>
         </div>
-        <div class = 'row'>
-            <button id = 'c31'>7</button>
-            <button id = 'c32'>8</button>
-            <button id = 'c33'>9</button>
+        <div class="row">
+            <button id="c31" onclick="cellClick(3, 1, 'c31')"></button>
+            <button id="c32" onclick="cellClick(3, 2, 'c32')"></button>
+            <button id="c33" onclick="cellClick(3, 3, 'c33')"></button>
+        </div>
+        <div class = 'reset-btn'>
+            <button id="reset" onclick="ResetBoard()">reset</button>
         </div>
     </div>
     <script>
-        let board = ['c11' , 'c12' , 'c13' , 'c21' ,'c22' , 'c23' , 'c31' , 'c32' , 'c33']
-        function click(){
-            
+        let board = ['c11', 'c12', 'c13', 'c21', 'c22', 'c23', 'c31', 'c32', 'c33'];
+        let currentPlayer = 'X';
+        function cellClick(row, col, id){
+            if(board.includes(id)){
+                let btn = document.getElementById(id);
+                btn.textContent = currentPlayer;
+                let index = board.indexOf(id);
+                if (index !== -1){
+                    board.splice(index, 1);
+                }
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
+            }
         }
-
+        function ResetBoard() {
+            board = ['c11', 'c12', 'c13', 'c21', 'c22', 'c23', 'c31', 'c32', 'c33'];
+            let AllBtn = document.getElementsByTagName("button");
+            for (let i = 0; i < AllBtn.length-1; i++) {
+                AllBtn[i].textContent = " ";
+            }
+            currentPlayer = 'X';
+        }
+        
     </script>
 {% endblock %}

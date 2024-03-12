@@ -45,8 +45,12 @@ body {
     align-items: center;
     border: black solid;
     width: 150px;
-    line-height: 150px;
+    height: 150px;
     background: white;
+    color: black;
+    font-size: 100px;
+    font-weight: lighter;
+    font-family: cursive;
   }
   
   /* Shadow effect */
@@ -57,6 +61,18 @@ body {
   /* Ensure text is not selectable */
   .row button span::selection {
     background-color: transparent;
+  }
+  .reset-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  .reset-btn button{
+    background-color: white;
+    padding: 10px;
+    width: 162px 
+
   }
 
   
