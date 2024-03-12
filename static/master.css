@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color:black;
+    line-height: 1.6;
+    font-size: 16px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+
+  header, main, footer {
+    padding: 20px;
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    /* border: white solid; */
+    width: fit-content;
+  }
+  .row{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* gap: 10px; */
+  }
+  
+  .row button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black solid;
+    width: 150px;
+    line-height: 150px;
+    background: white;
+  }
+  
+  /* Shadow effect */
+  .row button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Ensure text is not selectable */
+  .row button span::selection {
+    background-color: transparent;
+  }
+
+  
